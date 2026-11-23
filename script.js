@@ -10,19 +10,15 @@ const LUVORA_CONFIG = {
   googleMapsUrl: "https://maps.app.goo.gl/pjZyaeu16yjQZj519?g_st=ic",
   // Replace these URLs with your exact page handles if different:
   facebookUrl: "https://www.facebook.com/luvoraweddings",
-  instagramUrl: "https://www.instagram.com/luvoraweddings",
+  instagramUrl: "https://www.instagram.com/luvora.weddings?knvt=MXNtN2t0ODgwa24yNg==",
   // Build progress percentage shown on the darkroom meter (0-100):
-  buildProgressPercent: 78,
-  // Days from today for the launch countdown (or set an ISO date string like "2027-01-15T00:00:00+05:30"):
-  launchDaysFromNow: 24,
-  fixedLaunchDate: null
+  buildProgressPercent: 78
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   applyConfigLinks();
   initHeaderScroll();
   initProgressMeter();
-  initCountdown();
   initScrollReveal();
   initCopyButtons();
   initInquiryForm();
@@ -70,44 +66,6 @@ function initProgressMeter() {
       bar.style.width = `${target}%`;
     }, 260);
   });
-}
-
-/* Live launch countdown timer */
-function initCountdown() {
-  const dEl = document.getElementById("cdDays");
-  const hEl = document.getElementById("cdHours");
-  const mEl = document.getElementById("cdMins");
-  const sEl = document.getElementById("cdSecs");
-  if (!dEl || !hEl || !mEl || !sEl) return;
-
-  const targetDate = LUVORA_CONFIG.fixedLaunchDate
-    ? new Date(LUVORA_CONFIG.fixedLaunchDate)
-    : new Date(Date.now() + LUVORA_CONFIG.launchDaysFromNow * 24 * 60 * 60 * 1000);
-
-  const pad = (n) => String(Math.max(0, n)).padStart(2, "0");
-
-  const tick = () => {
-    const diff = targetDate.getTime() - Date.now();
-    if (diff <= 0) {
-      dEl.textContent = "00";
-      hEl.textContent = "00";
-      mEl.textContent = "00";
-      sEl.textContent = "00";
-      return;
-    }
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const mins = Math.floor((diff / (1000 * 60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-
-    dEl.textContent = pad(days);
-    hEl.textContent = pad(hours);
-    mEl.textContent = pad(mins);
-    sEl.textContent = pad(secs);
-  };
-
-  tick();
-  setInterval(tick, 1000);
 }
 
 /* Editorial scroll reveals */

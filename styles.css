@@ -565,48 +565,6 @@ textarea {
   font-weight: 500;
 }
 
-.countdown-divider {
-  height: 1px;
-  margin: 22px 0 18px;
-  background: linear-gradient(90deg, transparent, rgba(217, 182, 130, 0.3), transparent);
-}
-
-.countdown-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(10px, 3vw, 24px);
-}
-
-.cd-item {
-  min-width: 66px;
-}
-
-.cd-num {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(1.85rem, 4vw, 2.5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--ivory);
-}
-
-.cd-label {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 4px;
-}
-
-.cd-sep {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  color: rgba(217, 182, 130, 0.45);
-  margin-top: -14px;
-}
-
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
