@@ -10,15 +10,13 @@ const LUVORA_CONFIG = {
   googleMapsUrl: "https://maps.app.goo.gl/pjZyaeu16yjQZj519?g_st=ic",
   // Replace these URLs with your exact page handles if different:
   facebookUrl: "https://www.facebook.com/luvoraweddings",
-  instagramUrl: "https://www.instagram.com/luvora.weddings?knvt=MXNtN2t0ODgwa24yNg==",
-  // Build progress percentage shown on the darkroom meter (0-100):
-  buildProgressPercent: 78
+  instagramUrl: "https://www.instagram.com/luvora.weddings?knvt=MXNtN2t0ODgwa24yNg=="
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   applyConfigLinks();
   initHeaderScroll();
-  initProgressMeter();
+  initMobileNav();
   initScrollReveal();
   initCopyButtons();
   initInquiryForm();
@@ -50,21 +48,29 @@ function initHeaderScroll() {
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
-/* Animate darkroom development progress bar */
-function initProgressMeter() {
-  const bar = document.getElementById("progressBar");
-  const label = document.getElementById("progressValue");
-  if (!bar || !label) return;
+/* Mobile navigation drawer toggle */
+function initMobileNav() {
+  const toggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("mobileNav");
+  if (!toggle || !nav) return;
 
-  const target = Math.max(0, Math.min(100, LUVORA_CONFIG.buildProgressPercent));
-  label.textContent = String(target);
-  const track = bar.parentElement;
-  if (track) track.setAttribute("aria-valuenow", String(target));
+  const setOpen = (open) => {
+    toggle.classList.toggle("open", open);
+    nav.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    nav.setAttribute("aria-hidden", String(!open));
+  };
 
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      bar.style.width = `${target}%`;
-    }, 260);
+  toggle.addEventListener("click", () => {
+    setOpen(!nav.classList.contains("open"));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("open")) setOpen(false);
   });
 }
 
