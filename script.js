@@ -6,7 +6,7 @@ const LUVORA_CONFIG = {
   brandName: "Luvora Weddings",
   phoneDisplay: "+94 76 036 6989",
   whatsappNumber: "94760366989",
-  address: "55/1 Medhananda Mawatha, Piliyandala, Sri Lanka",
+  address: "Colombo, Sri Lanka",
   googleMapsUrl: "https://maps.app.goo.gl/pjZyaeu16yjQZj519?g_st=ic",
   // Replace these URLs with your exact page handles if different:
   facebookUrl: "https://www.facebook.com/luvoraweddings",
@@ -133,7 +133,7 @@ function initScrollReveal() {
   els.forEach((el) => observer.observe(el));
 }
 
-/* One-click copy phone number & studio address */
+/* One-click copy phone number & location */
 function initCopyButtons() {
   document.querySelectorAll("[data-copy]").forEach((btn) => {
     btn.addEventListener("click", async () => {

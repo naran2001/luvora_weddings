@@ -1,6 +1,6 @@
 # Luvora Weddings — Under Development Website
 
-Official coming-soon / under-development website for **Luvora Weddings** (Photography & Videography — Piliyandala, Sri Lanka).
+Official coming-soon / under-development website for **Luvora Weddings** (Photography & Videography — Colombo, Sri Lanka).
 
 ## Live Hosting on GitHub Pages
 1. Push this repository to GitHub (branch `main`).
