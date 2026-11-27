@@ -483,7 +483,7 @@ textarea {
 }
 
 .hero-logo-wrap {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .hero-logo-img {
@@ -491,6 +491,23 @@ textarea {
   height: auto;
   margin-inline: auto;
   filter: brightness(0) invert(1) sepia(16%) saturate(420%) hue-rotate(340deg) brightness(98%) drop-shadow(0 8px 30px rgba(0, 0, 0, 0.4));
+}
+
+.hero-slogan {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--gold-bright);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.slogan-heart {
+  font-style: normal;
+  font-size: 0.85em;
+  margin-left: 3px;
 }
 
 .hero-title {
