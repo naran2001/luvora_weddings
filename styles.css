@@ -112,13 +112,13 @@ textarea {
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 16px 0;
+  padding: 10px 0;
   transition: background-color var(--transition), border-color var(--transition), padding var(--transition), backdrop-filter var(--transition);
   border-bottom: 1px solid transparent;
 }
 
 .site-header.scrolled {
-  padding: 11px 0;
+  padding: 7px 0;
   background: rgba(24, 4, 8, 0.84);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -139,7 +139,7 @@ textarea {
 
 /* Invert transparent dark-maroon logo cleanly into warm silk ivory on dark backgrounds */
 .brand-logo-nav {
-  height: 40px;
+  height: 64px;
   width: auto;
   filter: brightness(0) invert(1) sepia(14%) saturate(420%) hue-rotate(340deg) brightness(98%);
   transition: opacity var(--transition), transform var(--transition);
@@ -1118,10 +1118,10 @@ textarea {
 }
 
 .footer-logo {
-  height: 44px;
+  height: 64px;
   width: auto;
   filter: brightness(0) invert(1) sepia(14%) saturate(420%) hue-rotate(340deg) brightness(98%);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-tagline {
@@ -1292,10 +1292,10 @@ textarea {
     width: min(1180px, 90%);
   }
   .site-header {
-    padding: 12px 0;
+    padding: 8px 0;
   }
   .brand-logo-nav {
-    height: 32px;
+    height: 48px;
   }
   .nav-links,
   .status-pill,
@@ -1391,7 +1391,7 @@ textarea {
   }
   .footer-logo {
     margin-inline: auto;
-    height: 36px;
+    height: 52px;
   }
   .full-mobile {
     width: 100%;
