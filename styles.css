@@ -504,12 +504,6 @@ textarea {
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 }
 
-.slogan-heart {
-  font-style: normal;
-  font-size: 0.85em;
-  margin-left: 3px;
-}
-
 .hero-title {
   font-family: var(--font-serif);
   font-size: clamp(2.6rem, 6.2vw, 4.9rem);
