@@ -117,11 +117,38 @@ function initCopyButtons() {
 function initInquiryForm() {
   const form = document.getElementById("inquiryForm");
   const copyBtn = document.getElementById("copyInquiryBtn");
+  const dateInput = document.getElementById("eventDate");
   if (!form) return;
+
+  // Open the calendar popup whenever the user clicks anywhere inside the date field
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+    dateInput.addEventListener("click", () => {
+      if (typeof dateInput.showPicker === "function") {
+        try {
+          dateInput.showPicker();
+        } catch {
+          // Fallback to native browser date control
+        }
+      }
+    });
+  }
 
   const buildInquiryText = () => {
     const couple = document.getElementById("coupleName")?.value.trim() || "a prospective couple";
-    const date = document.getElementById("eventDate")?.value || "Flexible / TBD";
+    const rawDate = dateInput?.value || "";
+    const date = rawDate
+      ? new Date(`${rawDate}T00:00:00`).toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        })
+      : "Flexible / TBD";
     const coverage = document.getElementById("coverageType")?.value || "Wedding Photography & Videography";
     const venue = document.getElementById("eventVenue")?.value.trim() || "To be decided";
     const notes = document.getElementById("eventNotes")?.value.trim();
