@@ -369,7 +369,7 @@ textarea {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("assets/editorial-wedding.jpeg") center / cover no-repeat;
+  background: url("assets/editorial-wedding.jpg") center / cover no-repeat;
   opacity: 0.14;
   filter: blur(1.5px) saturate(0.75);
   mask-image: radial-gradient(ellipse 80% 72% at 50% 42%, black 20%, transparent 82%);
@@ -633,7 +633,7 @@ textarea {
 
 .craft-media {
   position: relative;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--bg-brand);
 }
@@ -642,20 +642,7 @@ textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
-}
-
-.craft-media img.craft-img-wedding {
-  object-position: 50% 70%;
-}
-
-.craft-media img.craft-img-cinema {
-  object-position: 50% 82%;
-}
-
-.craft-media img.craft-img-portraits {
-  object-position: 50% 24%;
 }
 
 .craft-card:hover .craft-media img {
